@@ -10,10 +10,19 @@ export const ToDoDisplay = () => {
     const [todos, setTodos] = useState([])
 
     //add new input in the array by setting new state using te previous todos + the new entry
-    //task is the input
-    //default importance level is less important
-    const addTodo = todo => {
-        setTodos([...todos, {id: uuidv4(), task: todo, superImp: false, important: false, lessImp: true, completed: false, isEditing: false}])
+    //task is the input 
+    const addTodo = (todo, importance)=> {
+        setTodos([...todos, {id: uuidv4(), task: todo, importance, completed: false, isEditing: false}])
+    }
+
+    console.log(todos)
+
+    const completeTask=(entryId) => {
+        setTodos(
+            todos.map((todo) =>
+            todo.id===entryId ? {...todo, completed: true} : todo
+        )
+        )
     }
 
     //prop is named "entry"
@@ -21,8 +30,11 @@ export const ToDoDisplay = () => {
         <div className='ToDoDisplay'>
             <ToDoInput addTodo={addTodo}/>
             
-            {todos.map((todo, index) => (
-                <ToDoItem entry={todo} key={index} />
+            {todos.map((todo, id) => (
+                <ToDoItem 
+                entry={todo} 
+                key={id}
+                onComplete={completeTask} />
             ))}
         </div>
     )
