@@ -1,16 +1,15 @@
 import React, {useState} from 'react'
 
-export const ToDoInput = ({addTodo}) => {
+export const ToDoEdit = ({entry, onSave}) => {
 
-    const [value, setValue] = useState(""); //useState for the task text
-    const [importance, setImportance] = useState("");
+    const [value, setValue] = useState(entry.task); //useState for the task text
+    const [importance, setImportance] = useState(entry.importance);
 
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        addTodo(value, importance);
-        setValue("");
-        setImportance("");
+        onSave(value, entry.id, importance);
+
     }
 
 
@@ -27,9 +26,8 @@ export const ToDoInput = ({addTodo}) => {
 
     return (
         <div>
-            <h1>TODO</h1>
-            <form className='ToDoInput' onSubmit={handleSubmit}>
-                <input type="text" className='todo-input' placeholder='What does need to be done?' value={value} onChange={handleTextChange}/>
+            <form className='ToDoEdit' onSubmit={handleSubmit}>
+                <input type="text" className='todo-input' value={value} onChange={handleTextChange}/>
                 
                 <div>
                     <label>
@@ -62,7 +60,7 @@ export const ToDoInput = ({addTodo}) => {
                     </label>
                 </div>
                 
-                <button type="submit" className='submitBtn'>+</button>
+                <button type="submit" className='submitBtn'>Update</button>
             </form>
        </div>
     )
