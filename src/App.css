@@ -1,38 +1,129 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
+
+*{
+  font-family: 'Jua';
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.PageWrapper{
+  background-color: #FFEFE2;
+  width: 100vw;
+  height: 100vh;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+}
+
+/* white input form box */
+.InputForm{
+  margin-top: 10%;
+  width: 977px;
+  height: 228px;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h1{
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+/* input text field */
+.InputText{
+  width: 873px;
+  height: 56px;
+  border-radius: 25px;
+  border: 3px solid #898198;
+  padding-left: 22px;
+  padding-right: 22px;
+  font-size: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.cont1{
+  margin-right: 20px;
+  margin-left: 20px;
+  margin-top: 20px;
 }
+
+.ImpLabel{
+  padding-right: 25px;
+  font-size: 18px;
+}
+
+.RadioBtn{
+  margin-right: 5px;
+}
+
+.SubmitBtn{
+  width:100px;
+  height:35px;
+  font-size: 20px;
+  background-color: pink;
+  border-radius: 25px ;
+  border: 2px solid white;
+  box-shadow: 0px 5px gray;
+}
+
+.BtnHeader{
+  display: flex;
+  margin-top: 7%;
+  margin-left: 50px;
+  margin-right: 50px;
+  font-size: 18px;
+}
+
+/* buttons on header */
+.BtnCluster{
+  width: 100%;
+}
+
+/* sort text, chevrons icon, x icon */
+.SortBtns{
+  display: flex;
+  width: 23%;
+  align-items: center;
+}
+
+.SortText{
+  margin-top: 20px;
+  padding-right: 10px;
+}
+/* chevron icons, x icon */
+.Sort{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width:40px;
+  height: 40px;
+  background-color: pink;
+  border-radius: 25px ;
+  border: 2px solid white;
+  box-shadow: 0px 5px gray;
+}
+
+.CleanUpBtn{
+  width: 230px;
+  height: 50px;
+  background-color: pink ;
+  border-radius: 25px ;
+  border: 2px solid white;
+  box-shadow: 0px 5px gray;
+}
+
+.CleanUpBtn:hover ,.Sort:hover, .SubmitBtn:hover{
+  background-color: #E6A5AD;
+}
+
+.CleanUpBtn:active, .Sort:active, .SubmitBtn:active{
+  background-color: #E6A5AD;
+  box-shadow: 0px 2px darkgray;
+  transform: translateY(4px);
+}
+
+
+
+
+
+
+

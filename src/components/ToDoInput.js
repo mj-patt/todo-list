@@ -27,42 +27,48 @@ export const ToDoInput = ({addTodo}) => {
 
     return (
         <div>
-            <h1>TODO</h1>
+            <h1>MY TODO</h1>
             <form className='ToDoInput' onSubmit={handleSubmit}>
-                <input type="text" className='todo-input' placeholder='What does need to be done?' value={value} onChange={handleTextChange}/>
+                <input type="text" className='InputText' placeholder='What does need to be done?' value={value} onChange={handleTextChange}/>
                 
-                <div>
-                    <label>
+                <div className="d-flex justify-content-between cont1">
+                <div className="cont2">
+                    <label className="ImpLabel">
                         <input
                             type ="radio"
                             value="3"
                             checked={importance === "3"}
                             onChange={handleImportanceChange}
+                            className="RadioBtn"
                         />
                         Super Important
                     </label>
-                    <label>
+                    <label className="ImpLabel">
                         <input
                             type="radio"
                             value="2"
                             checked={importance === "2"}
                             onChange={handleImportanceChange}
+                            className="RadioBtn"
                             
                         />
                         Important
                     </label>
-                    <label>
+                    <label className="ImpLabel">
                         <input
                             type="radio"
                             value="1"
                             checked={importance==="1"}
                             onChange={handleImportanceChange}
+                            className="RadioBtn"
                         />
                         Less Important
                     </label>
                 </div>
                 
-                <button type="submit" className='submitBtn'>+</button>
+                <button type="submit" className='SubmitBtn'>Submit</button>
+                </div>
+
             </form>
        </div>
     )

@@ -86,6 +86,7 @@ export const ToDoDisplay = () => {
         setTodos(sortedTasks)
     }
 
+    //show the original order of the task (cancel out the sorting function)
     const sortOri=()=>{
         const sortedTasks= [...todos].sort((a,b)=>{
             return a.id - b.id
@@ -101,9 +102,15 @@ export const ToDoDisplay = () => {
 
     //prop is named "entry"
     return (
+        <div className='PageWrapper'>
         <div className='ToDoDisplay'>
-            <ToDoInput addTodo={addTodo}/>
             
+            
+            <div className='InputForm'>
+            <ToDoInput addTodo={addTodo}/>
+            </div>
+
+            <div className='EntryList'>
             {todos.map((todo, id) => (
                 todo.isEditing ? (
                     <ToDoEdit
@@ -123,13 +130,19 @@ export const ToDoDisplay = () => {
                     />
                 )
             ))}
+            </div>
 
+            <div className='BtnHeader'>
             <Header 
             sortAsc={sortAsc} 
             sortDesc={sortDesc}
             sortOri={sortOri}
             cleanUp={cleanUp}
             />
+            </div>
+        
+        </div>
+
         </div>
     )
 }
