@@ -27,11 +27,8 @@ export const ToDoDisplay = () => {
     //task is the input 
     const addTodo = (todo, importance)=> {
         
-        
-        
         setTodos([...todos, {id: idCounter, task: todo, importance, completed: false, isEditing: false}])
         setIdCounter(idCounter+1)
-        console.log(todos.length)
         
     }
 
@@ -89,6 +86,19 @@ export const ToDoDisplay = () => {
         setTodos(sortedTasks)
     }
 
+    const sortOri=()=>{
+        const sortedTasks= [...todos].sort((a,b)=>{
+            return a.id - b.id
+        })
+        setTodos(sortedTasks)
+    }
+
+    const cleanUp=()=>{
+
+        setTodos(todos.filter(todo => todo.completed===false))
+        
+    }
+
     //prop is named "entry"
     return (
         <div className='ToDoDisplay'>
@@ -117,6 +127,8 @@ export const ToDoDisplay = () => {
             <Header 
             sortAsc={sortAsc} 
             sortDesc={sortDesc}
+            sortOri={sortOri}
+            cleanUp={cleanUp}
             />
         </div>
     )
