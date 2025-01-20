@@ -12,11 +12,28 @@
   justify-content: center;
 }
 
+.ToDoDisplay{
+ width: 100%;
+ height: 100%;
+ display: flex;
+ /* justify-content: center; */
+ align-items: center;
+ flex-direction: column;
+}
+
+.InputWrapper{
+  width: 80%;
+}
+
 /* white input form box */
 .InputForm{
-  margin-top: 10%;
+  margin-top: 5%;
   width: 977px;
   height: 228px;
+  /* max-width: 150%; */
+  /* height:20%; */
+  /* padding-right: 12%;
+  padding-left: 12%; */
   background-color: white;
   display: flex;
   justify-content: center;
@@ -31,28 +48,44 @@ h1{
 
 /* input text field */
 .InputText{
-  width: 873px;
-  height: 56px;
+  /* width: 873px;
+  height: 56px; */
+  width: 100%;
+  
   border-radius: 25px;
   border: 3px solid #898198;
+  padding-top: 7px;
+  padding-bottom: 7px;
   padding-left: 22px;
   padding-right: 22px;
   font-size: 20px;
 }
 
-.cont1{
+.Cont1{
   margin-right: 20px;
   margin-left: 20px;
   margin-top: 20px;
 }
 
-.ImpLabel{
+/* label for important */
+.ImpLabelMid{
   padding-right: 25px;
+  padding-left: 25px;
   font-size: 18px;
+  display: inline-flex;
+  align-items: center;
+}
+
+/* label for super and less important */
+.ImpLabel{
+  font-size: 18px;
+  display: inline-flex;
+  align-items: center;
 }
 
 .RadioBtn{
   margin-right: 5px;
+  
 }
 
 .SubmitBtn{
@@ -67,25 +100,30 @@ h1{
 
 .BtnHeader{
   display: flex;
-  margin-top: 7%;
-  margin-left: 50px;
-  margin-right: 50px;
+  margin-top: 3%;
+  /* margin-left: 50%;
+  margin-right: 50%; */
   font-size: 18px;
+  width: 100%;
 }
 
 /* buttons on header */
 .BtnCluster{
   width: 100%;
+  display: flex;
+  margin-left: 15%;
+  margin-right: 15%;
 }
 
 /* sort text, chevrons icon, x icon */
 .SortBtns{
   display: flex;
-  width: 23%;
+  width: 250px;
   align-items: center;
 }
 
 .SortText{
+  display: flex;
   margin-top: 20px;
   padding-right: 10px;
 }
@@ -97,12 +135,15 @@ h1{
   width:40px;
   height: 40px;
   background-color: pink;
-  border-radius: 25px ;
+  border-radius: 75% ;
   border: 2px solid white;
   box-shadow: 0px 5px gray;
 }
 
 .CleanUpBtn{
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 230px;
   height: 50px;
   background-color: pink ;
@@ -121,9 +162,121 @@ h1{
   transform: translateY(4px);
 }
 
+.EntryList{
+ width: 100%;
+ display: flex;
+ flex-direction: column;
+ margin-top: 2%;
 
+}
 
+.ToDoItem{
+display: flex;
+width: 100%;
 
+  /* background-color: lightblue; */
+}
 
+.SingleItem{
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 977px;
+  height: 56px;
+  margin: auto;
+  border-radius: 25px;
+  margin-bottom: 25px;
+}
+
+.ToDoText{
+  color: white;
+  margin: auto;
+  width: 80%;
+  padding-left: 20px;
+  font-size: 20px;
+}
+
+.DoneBtn{
+  margin-left: 3%;
+}
+
+/* container for edit and delete button */
+.BtnDuo{
+  margin-right: 3%;
+  display: block;
+}
+
+.EditBtn{
+  border: none;
+  background-color: transparent;
+  color: white;
+  padding-right: 25px;
+}
+
+.DeleteBtn{
+  border: none;
+  background-color: transparent;
+  color: white;
+}
+
+@media (max-width: 991.98px){
+  .InputForm{
+    /* margin-left: 10px;
+    margin-right: 10px; */
+    
+    width: 95%;
+  }
+
+  .SingleItem{
+    width: 95%;
+  }
+
+  .BtnCluster{
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+
+  .SingleItem{
+    margin-bottom: 20px;
+  }
+
+  .ToDoText{
+    width: 70%;
+    padding-left: 5px;
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 785px){
+
+  .Cont1{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .ImpLabelMid{
+    font-size: 17px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .ImpLabel{
+    font-size: 17px;
+  }
+
+  .SubmitBtn{
+    margin-top: 10px;
+  }
+
+  .SortBtns{
+    width: 40%;
+  }
+
+  .SingleItem{
+    margin-bottom: 15px;
+  }
+}
 
 

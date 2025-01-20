@@ -110,6 +110,15 @@ export const ToDoDisplay = () => {
             <ToDoInput addTodo={addTodo}/>
             </div>
 
+            <div className='BtnHeader'>
+            <Header 
+            sortAsc={sortAsc} 
+            sortDesc={sortDesc}
+            sortOri={sortOri}
+            cleanUp={cleanUp}
+            />
+            </div>
+
             <div className='EntryList'>
             {todos.map((todo, id) => (
                 todo.isEditing ? (
@@ -126,20 +135,14 @@ export const ToDoDisplay = () => {
                     onDelete={deleteTask}
                     onEdit={editTask}
                     
+                            
+                    
                     
                     />
                 )
             ))}
             </div>
 
-            <div className='BtnHeader'>
-            <Header 
-            sortAsc={sortAsc} 
-            sortDesc={sortDesc}
-            sortOri={sortOri}
-            cleanUp={cleanUp}
-            />
-            </div>
         
         </div>
 

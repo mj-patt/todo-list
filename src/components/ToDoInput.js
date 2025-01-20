@@ -26,13 +26,13 @@ export const ToDoInput = ({addTodo}) => {
    
 
     return (
-        <div>
+        <div className="InputWrapper">
             <h1>MY TODO</h1>
             <form className='ToDoInput' onSubmit={handleSubmit}>
                 <input type="text" className='InputText' placeholder='What does need to be done?' value={value} onChange={handleTextChange}/>
                 
-                <div className="d-flex justify-content-between cont1">
-                <div className="cont2">
+                <div className="d-flex justify-content-between Cont1">
+                <div className="Cont2">
                     <label className="ImpLabel">
                         <input
                             type ="radio"
@@ -43,7 +43,7 @@ export const ToDoInput = ({addTodo}) => {
                         />
                         Super Important
                     </label>
-                    <label className="ImpLabel">
+                    <label className="ImpLabelMid">
                         <input
                             type="radio"
                             value="2"
