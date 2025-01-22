@@ -25,12 +25,13 @@ export const ToDoEdit = ({entry, onSave}) => {
    
 
     return (
-        <div>
+        <div className='EditWrapper'>
             <form className='ToDoEdit' onSubmit={handleSubmit}>
-                <input type="text" className='todo-input' value={value} onChange={handleTextChange}/>
+            <div className='EditLeft'>
+                <input type="text" className='EditText' value={value} onChange={handleTextChange}/>
                 
                 <div>
-                    <label>
+                    <label className='EditImp'>
                         <input
                             type ="radio"
                             value="3"
@@ -39,7 +40,7 @@ export const ToDoEdit = ({entry, onSave}) => {
                         />
                         Super Important
                     </label>
-                    <label>
+                    <label className='EditImp'>
                         <input
                             type="radio"
                             value="2"
@@ -49,7 +50,7 @@ export const ToDoEdit = ({entry, onSave}) => {
                         />
                         Important
                     </label>
-                    <label>
+                    <label className='EditImp'>
                         <input
                             type="radio"
                             value="1"
@@ -59,8 +60,10 @@ export const ToDoEdit = ({entry, onSave}) => {
                         Less Important
                     </label>
                 </div>
-                
-                <button type="submit" className='submitBtn'>Update</button>
+            </div>
+            <div className='EditRight'>
+                <button type="submit" className='UpdateBtn'>Update</button>
+            </div>
             </form>
        </div>
     )

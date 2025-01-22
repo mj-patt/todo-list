@@ -18,8 +18,9 @@ export const ToDoItem = ({entry, onComplete, onDelete, onEdit}) => {
 
             {/* view mode */}
             <div className="SingleItem" style={{
-            backgroundColor: colorAssignment[entry.importance] || 'blue'}} 
+            backgroundColor: colorAssignment[entry.importance]}} 
             >
+                <label className='CheckboxLabel'>
                 <input
                     type="checkbox"
                     checked={entry.completed} //checkbox is checked when task is completed
@@ -27,9 +28,11 @@ export const ToDoItem = ({entry, onComplete, onDelete, onEdit}) => {
                     disabled={entry.completed} //disabled checkbox once the task is completed
                     className="DoneBtn"
                 />
+                <span className="CustomCheckbox"></span>
+                </label>
                 <p className="ToDoText" style={{ textDecoration: entry.completed ? "line-through" : "none" }}>{entry.task}</p>
                 <div className='BtnDuo'>
-                    <button className='EditBtn' onClick={()=>onEdit(entry.id)}><FontAwesomeIcon icon={faPen}/></button>
+                    <button className='EditBtn' onClick={()=>onEdit(entry.id)} style={{display: entry.completed ? "none" : "absolute"}}><FontAwesomeIcon icon={faPen}/></button>
                     <button className='DeleteBtn' onClick={()=>onDelete(entry.id)}><FontAwesomeIcon icon={faTrash}/></button>
                 </div>
 

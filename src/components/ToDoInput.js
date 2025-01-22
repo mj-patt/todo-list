@@ -3,7 +3,7 @@ import React, {useState} from 'react'
 export const ToDoInput = ({addTodo}) => {
 
     const [value, setValue] = useState(""); //useState for the task text
-    const [importance, setImportance] = useState("");
+    const [importance, setImportance] = useState("2");
 
 
     const handleSubmit = (event) => {

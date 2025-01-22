@@ -6,7 +6,7 @@
 
 .PageWrapper{
   background-color: #FFEFE2;
-  width: 100vw;
+  max-width: 100vw;
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -109,10 +109,11 @@ h1{
 
 /* buttons on header */
 .BtnCluster{
-  width: 100%;
+  margin: auto;
+  width: 977px;
   display: flex;
-  margin-left: 15%;
-  margin-right: 15%;
+  /* margin-left: 15%;
+  margin-right: 15%; */
 }
 
 /* sort text, chevrons icon, x icon */
@@ -197,11 +198,47 @@ width: 100%;
   font-size: 20px;
 }
 
-.DoneBtn{
-  margin-left: 3%;
+.CheckboxLabel{
+  position: relative;
+  display: inline-block;
+  margin-left: 30px;
+  margin-bottom: 20px;
+  
 }
 
+.DoneBtn{
+  /* margin-left: 3%; */
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.CustomCheckbox{
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background-color: transparent;
+  border: solid 2px white;
+  border-radius: 25%;
+}
+
+.CheckboxLabel input:checked + span::after {
+  content: '✔';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 16px;
+  color: white;
+}
+
+
 /* container for edit and delete button */
+
 .BtnDuo{
   margin-right: 3%;
   display: block;
@@ -220,6 +257,66 @@ width: 100%;
   color: white;
 }
 
+.EditWrapper{
+  display: flex;
+  align-items: center;
+  width: 977px;
+  background-color: white;
+  margin: auto;
+  margin-bottom: 25px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  border-radius: 25px;
+}
+
+.ToDoEdit{
+  display: flex;
+  flex-direction: row;
+  justify-content:space-between;
+  width: 100%;
+}
+
+.EditLeft{
+  margin-left: 5%;
+  width: 70%;
+}
+
+.EditRight{
+  margin-right: 5%;
+  margin-top: 10px;
+}
+
+.EditText{
+  width: 100%;
+  border-radius: 25px;
+  border: 3px solid #898198;
+  /* padding-top: 3px;
+  padding-bottom: 3px; */
+  padding-left: 22px;
+  padding-right: 22px;
+  font-size: 20px;
+  margin-bottom: 7px;
+}
+
+.UpdateBtn{
+  width:100px;
+  height:35px;
+  font-size: 20px;
+  background-color: pink;
+  border-radius: 25px ;
+  border: 2px solid white;
+  box-shadow: 0px 5px gray;
+}
+
+/* important radio buttons complex */
+.EditImp{
+  padding-left: 20px ;
+}
+
+
+
+
+
 @media (max-width: 991.98px){
   .InputForm{
     /* margin-left: 10px;
@@ -229,6 +326,10 @@ width: 100%;
   }
 
   .SingleItem{
+    width: 95%;
+  }
+
+  .EditWrapper{
     width: 95%;
   }
 
@@ -258,8 +359,8 @@ width: 100%;
 
   .ImpLabelMid{
     font-size: 17px;
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-left: 10px;
+    padding-right: 10px;
   }
 
   .ImpLabel{
@@ -276,6 +377,10 @@ width: 100%;
 
   .SingleItem{
     margin-bottom: 15px;
+  }
+
+  .EditImp{
+    padding-left: 10px;
   }
 }
 
